@@ -27,9 +27,24 @@ public class CardTrick {
             magicHand[i]= c;
           
         }
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
-    }
-    
+       System.out.println("Enter the card suit: ");
+        String cardSuits = input.nextLine();
+        System.out.println("Enter the card number: ");
+        int cardNums = input.nextInt();
+        
+        boolean detect = false;
+        
+         for(int i = 0; i < magicHand.length; i++) {
+            if(magicHand[i].getValue() == cardNums && magicHand[i].getSuit().equals(cardSuits)) {
+                System.out.println("Card has been found!");
+                detect = true;
+            }
+        }
+        if(!detect) {
+            System.out.println("Card not found!");
+        }
+        
+   
+    } 
+   
 }
